@@ -1,0 +1,5 @@
+Authomatic==0.1.0.post1
+Fabric==1.13.1
+Flask==0.12
+Flask-Cors==3.0.2
+gunicorn==19.6.0

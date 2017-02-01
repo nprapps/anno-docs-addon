@@ -1,0 +1,12 @@
+.DS_store
+*.py[co]
+*.sw[op]
+
+# Packages
+*.egg
+*.egg-info
+# Installer logs
+pip-log.txt
+
+#Logs
+logs/*.log
