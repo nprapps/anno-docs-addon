@@ -13,7 +13,32 @@ AnnotationAddon
 What is this?
 -------------
 
-Google Apps Script Addon to add annotation with frontmatter
+Google Docs Addon to add annotations
+
+The Addon has three functionalities:
+* Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the authors of the annotations. it requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing)
+* Set Sidebar Logo (optional): Used to add a logo to the annotation sidebar
+* Add Annotation: Used to insert the annotations inside the document
+
+Each annotation consists of:
+* start marker: Marks the start of a given annotation
+* end marker: Marks the end of a given annotation
+* metadata: Metadata for a given annotation including author information and a slug
+* placeholder: Placeholder for the annotation text.
+
+![Annotation on the doc](screenshots/annotation_doc.png)
+
+When we want to add an annotation to the text we can proceed in two ways:
+* Select some text on the document:
+    * We should select text of the document that is outside of any other annotation, i.e. nested annotations are not supported. When we add the annotation the selected text will be bolded by the Add-on.
+* Place cursor where we want the annotation to appear in:
+    * The annotation will be added directly below our cursor.
+
+Even though it can be used for other purposes it was developed to be combined with NPR factcheck rig, you can find more information of how to use that rig [here](https://github.com/nprapps/debates)
+
+![Annotation on the final html page](screenshots/annotation_html.png)
+
+The source of the annotation Add-on is inside the `annotate` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
 
 Assumptions
 -----------
@@ -87,6 +112,30 @@ It will return a complete list of Google Apps Script projects. It accepts and op
 fab gs.list_projects:me
 ```
 
+## Create project
+
+If you want to create the project on your own drive, first inside `app_config.py` update `DRIVE_PARENT_FOLDER_ID` to reflect one existing folder where you want the standalone script to live in. Then you can run:
+
+```
+fab [ENVIRONMENT] gs.create
+```
+
+This will create a new google apps script project on a subfolder that will depend on the ÈNVIRONMENT used `development` or `production`.
+
+Imagine your root folder on drive is called `scripts`. The fabric tasks expect the following folder structure:
+
+```
+scripts
+| development
+| production
+```
+
+## Test as an Add-On
+
+While you are developing changes to the google apps script, we strongly recommend that you use the `Publish -> Test as add-on` option on the project until you are happy with the results.
+
+![Test as an Add-On](screenshots/test_addon.png)
+
 ## Upsert project
 
 If you want to update local changes to a Google Apps Script Project you can run:
@@ -95,7 +144,7 @@ If you want to update local changes to a Google Apps Script Project you can run:
 fab [ENVIRONMENT] gs.upsert
 ```
 
-Where `ENVIRONMENT` can be: `development`, `staging` or `production`. Depending on the environment passed the command will update the appropriate Google App Script Project using `app_config` properties. For development it would be:
+Where `ENVIRONMENT` can be: `development` or `production`. Depending on the environment passed the command will update the appropriate Google App Script Project using `app_config` properties. For development it would be:
 
 ```
 fab development gs.upsert
