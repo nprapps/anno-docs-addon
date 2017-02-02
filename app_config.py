@@ -21,13 +21,13 @@ NAMES
 """
 # Project name to be used in urls
 # Use dashes, not underscores!
-PROJECT_SLUG = 'annotationAddon'
+PROJECT_SLUG = 'annotateAddon'
 
 # Project name to be used in file paths
-PROJECT_FILENAME = 'annotationAddon'
+PROJECT_FILENAME = 'annotateAddon'
 
 # The name of the repository containing the source
-REPOSITORY_NAME = 'annotationAddon'
+REPOSITORY_NAME = 'annotateAddon'
 GITHUB_USERNAME = 'nprapps'
 REPOSITORY_URL = 'git@github.com:%s/%s.git' % (
     GITHUB_USERNAME, REPOSITORY_NAME)

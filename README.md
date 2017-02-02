@@ -1,4 +1,4 @@
-AnnotationAddon
+AnnotateAddon
 ========================
 
 * [What is this?](#what-is-this)
@@ -14,6 +14,10 @@ What is this?
 -------------
 
 Google Docs Addon to add annotations
+
+If you just want to use it there's a publicly available [Google Doc Template](https://docs.google.com/document/d/1PYWrdnrcUJwe8dlondyN_x8SjSyLqdsxUktHSHAuvv0/edit?usp=sharing) that you can make a copy of and it will include all the necesary code to run the AddOn.
+
+![Copy](screenshots/copy.png)
 
 The Addon has three functionalities:
 * Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the authors of the annotations. it requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing)
@@ -69,8 +73,8 @@ Bootstrap the project
 ---------------------
 
 ```
-cd annotationAddon
-mkvirtualenv annotationAddon
+cd annotateAddon
+mkvirtualenv annotateAddon
 pip install -r requirements.txt
 ```
 
@@ -89,7 +93,7 @@ Run the project
 A flask app is used to run the project locally. It will automatically recompile templates and assets on demand.
 
 ```
-workon annotationAddon
+workon annotateAddon
 fab app
 ```
 
@@ -162,4 +166,6 @@ Released under the MIT open source license. See ``LICENSE`` for details.
 
 Contributors
 ---------
-See ``CONTRIBUTORS``
+This repo was developed by NPR Visuals team.
+
+See additional ``CONTRIBUTORS``
