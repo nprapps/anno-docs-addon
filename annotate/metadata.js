@@ -180,7 +180,6 @@ function insertMetadata(formObject) {
         var placeholder = body.insertParagraph(idx+12, ANNOTATION_PLACEHOLDER);
         body.insertParagraph(idx+13, '');
         body.insertParagraph(idx+14, END_POST_MARKER).setBold(false).setForegroundColor('#FF0000');
-        body.insertParagraph(idx+15, '').setBold(false).setForegroundColor(null).setBackgroundColor(null);
 
         // POSITION CURSOR ON PLACEHOLDER COPY TEXT
         var rangeBuilder = doc.newRange();
