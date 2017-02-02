@@ -13,13 +13,13 @@ AnnotateAddon
 What is this?
 -------------
 
-Google Docs Addon to add annotations
+Google Docs Add-on to add annotations.
 
-If you just want to use it there's a publicly available [Google Doc Template](https://docs.google.com/document/d/1PYWrdnrcUJwe8dlondyN_x8SjSyLqdsxUktHSHAuvv0/edit?usp=sharing) that you can make a copy of and it will include all the necesary code to run the AddOn.
+If you just want to use it there's a publicly available [Google Doc Template](https://docs.google.com/document/d/1PYWrdnrcUJwe8dlondyN_x8SjSyLqdsxUktHSHAuvv0/edit?usp=sharing) that you can make a copy of and it will include all the necesary code to run the Add-on.
 
 ![Copy](screenshots/copy.png)
 
-The Addon has three functionalities:
+The Add-on has three functionalities:
 * Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the authors of the annotations. it requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing)
 * Set Sidebar Logo (optional): Used to add a logo to the annotation sidebar
 * Add Annotation: Used to insert the annotations inside the document
