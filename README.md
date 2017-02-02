@@ -30,17 +30,17 @@ Each annotation consists of:
 * metadata: Metadata for a given annotation including author information and a slug
 * placeholder: Placeholder for the annotation text.
 
-![Annotation on the doc](screenshots/annotation_doc.png)
-
 When we want to add an annotation to the text we can proceed in two ways:
 * Select some text on the document:
     * We should select text of the document that is outside of any other annotation, i.e. nested annotations are not supported. When we add the annotation the selected text will be bolded by the Add-on.
 * Place cursor where we want the annotation to appear in:
     * The annotation will be added directly below our cursor.
 
+Here's a screenshot of an [example](screenshots/annotation_doc.png) of a final annotation on a given doc.
+
 Even though it can be used for other purposes it was developed to be combined with NPR factcheck rig, you can find more information of how to use that rig [here](https://github.com/nprapps/debates)
 
-![Annotation on the final html page](screenshots/annotation_html.png)
+Here's a screenshot of an [example](screenshots/annotation_html.png) of a final annotation as displayed by our factcheck rig.
 
 The source of the annotation Add-on is inside the `annotate` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
 
