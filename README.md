@@ -36,11 +36,11 @@ When we want to add an annotation to the text we can proceed in two ways:
 * Place cursor where we want the annotation to appear in:
     * The annotation will be added directly below our cursor.
 
-Here's a screenshot of an [example](screenshots/annotation_doc.png) of a final annotation on a given doc.
+Here's a [screenshot](screenshots/annotation_doc.png) of a final annotation on a given doc.
 
 Even though it can be used for other purposes it was developed to be combined with NPR factcheck rig, you can find more information of how to use that rig [here](https://github.com/nprapps/debates)
 
-Here's a screenshot of an [example](screenshots/annotation_html.png) of a final annotation as displayed by our factcheck rig.
+Here's a [screenshot](screenshots/annotation_html.png) of the same annotation as displayed by our factcheck rig.
 
 The source of the annotation Add-on is inside the `annotate` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
 
