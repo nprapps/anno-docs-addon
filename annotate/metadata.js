@@ -17,6 +17,17 @@ function showMetadataSidebar_() {
     ui.showSidebar(html);
 }
 
+function Comparator(a, b) {
+    var splitA = a[1].split(" ");
+    var splitB = b[1].split(" ");
+    var lastA = splitA[splitA.length - 1];
+    var lastB = splitB[splitB.length - 1];
+
+    if (lastA < lastB) return -1;
+    if (lastA > lastB) return 1;
+    return 0;
+}
+
 /**
  * Retrieves the Authors data from a configured spreadsheet key
  * added to the Documents properties by setAuthors_() in config
@@ -24,11 +35,14 @@ function showMetadataSidebar_() {
 function getAuthorsData_() {
     var props = PropertiesService.getDocumentProperties();
     var authors_key = props.getProperty('authors_key');
-    return SpreadsheetApp.openById(authors_key)
+    var values = SpreadsheetApp.openById(authors_key)
                          .getActiveSheet()
                          .getDataRange()
-                         .sort(2)
                          .getValues();
+    // remove header
+    values.shift();
+    values = values.sort(Comparator);
+    return values;
 }
 
 /**
