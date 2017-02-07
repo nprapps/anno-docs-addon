@@ -27,6 +27,7 @@ function getAuthorsData_() {
     return SpreadsheetApp.openById(authors_key)
                          .getActiveSheet()
                          .getDataRange()
+                         .sort(2)
                          .getValues();
 }
 
