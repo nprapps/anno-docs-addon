@@ -19,8 +19,8 @@ If you just want to use it there's a publicly available [Google Doc Template](ht
 
 ![Copy](screenshots/copy.png)
 
-The Add-on has three functionalities:
-* Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the authors of the annotations. it requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing)
+The Add-on has three functions you can run:
+* Set Authors Spreadsheet (*required*): Used to add an external accesible spreadsheet that will contain the metadata for all possible authors of the annotations. It requires a certain schema. You can find an example [here](https://docs.google.com/spreadsheets/d/18dzZhuqnoz2e2Y7TBfYYAuhgK8SRwPEPpEGL1Sl9Rng/edit?usp=sharing).
 * Set Sidebar Logo (optional): Used to add a logo to the annotation sidebar
 * Add Annotation: Used to insert the annotations inside the document
 
@@ -33,14 +33,19 @@ Each annotation consists of:
 When we want to add an annotation to the text we can proceed in two ways:
 * Select some text on the document:
     * We should select text of the document that is outside of any other annotation, i.e. nested annotations are not supported. When we add the annotation the selected text will be bolded by the Add-on.
+    * In this case the highlighted text will be bolded, and the annotation will be placed below the paragraph containing the highlighted text.
 * Place cursor where we want the annotation to appear in:
     * The annotation will be added directly below our cursor.
 
 Here's a [screenshot](screenshots/annotation_doc.png) of a final annotation on a given doc.
 
-Even though it can be used for other purposes it was developed to be combined with NPR factcheck rig, you can find more information of how to use that rig [here](https://github.com/nprapps/debates)
+![screenshot](screenshots/annotation_doc.png)
+
+Even though it can be used for other purposes it was developed to be combined with NPR fact-checking system. You can find more information of how to use that rig [here](https://github.com/nprapps/debates).
 
 Here's a [screenshot](screenshots/annotation_html.png) of the same annotation as displayed by our factcheck rig.
+
+![factcheck](screenshots/annotation_html.png)
 
 The source of the annotation Add-on is inside the `annotate` folder, the rest of the repo contains development tools that will allow us to upload the google app script project using our own oAuth credentials.
 
