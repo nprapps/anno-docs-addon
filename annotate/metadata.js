@@ -93,35 +93,11 @@ function insertMetadata(formObject) {
             throw new CustomError(msg, 'metadata.js', '51');
         }
         var author = 'Author:';
-        var author_role = 'Role:';
-        var author_page = 'Page:';
-        var author_img = 'Image:';
-        var bits = null;
         if (formObject.author === 'other') {
-            bits = formObject.otherAuthor.split('|')
-            author += ' ' + bits[0];
-            if (bits.length > 1) {
-                author_role += ' ' + bits[1];
-            }
-            if (bits.length > 2) {
-                author_page += ' ' + bits[2];
-            }
-            if (bits.length > 3) {
-                author_img += ' ' + bits[3];
-            }
+            author += ' ' + formObject.otherAuthor;
         }
         else {
-            bits = formObject.author.split('|')
-            author += ' ' + bits[0];
-            if (bits.length > 1) {
-                author_role += ' ' + bits[1];
-            }
-            if (bits.length > 2) {
-                author_page += ' ' + bits[2];
-            }
-            if (bits.length > 3) {
-                author_img += ' ' + bits[3];
-            }
+            author += ' ' + formObject.author;
         }
 
         // Slug metadata
@@ -182,19 +158,16 @@ function insertMetadata(formObject) {
         }
         var idx = body.getChildIndex(el);
         body.insertParagraph(idx+1, NEW_POST_MARKER).setBold(false).setBackgroundColor(null).setForegroundColor(null);
-        var heading = body.insertParagraph(idx+2, formObject.description).setHeading(DocumentApp.ParagraphHeading.HEADING1);
+        var heading = body.insertParagraph(idx+2, formObject.description).setHeading(DocumentApp.ParagraphHeading.HEADING2);
         p = body.insertParagraph(idx+3, FRONTMATTER_MARKER);
         body.insertParagraph(idx+4, author);
-        body.insertParagraph(idx+5, author_role);
-        body.insertParagraph(idx+6, author_page);
-        body.insertParagraph(idx+7, author_img);
-        body.insertParagraph(idx+8, slug);
-        body.insertParagraph(idx+9, published).setHeading(DocumentApp.ParagraphHeading.HEADING3).setBold(true).setBackgroundColor('#FFF2CC');
-        body.insertParagraph(idx+10, FRONTMATTER_MARKER).setBold(false).setBackgroundColor(null);
-        body.insertParagraph(idx+11, '');
-        var placeholder = body.insertParagraph(idx+12, ANNOTATION_PLACEHOLDER);
-        body.insertParagraph(idx+13, '');
-        body.insertParagraph(idx+14, END_POST_MARKER).setBold(false).setForegroundColor('#FF0000');
+        body.insertParagraph(idx+5, slug);
+        body.insertParagraph(idx+6, published).setHeading(DocumentApp.ParagraphHeading.HEADING3).setBold(true).setBackgroundColor('#FFF2CC');
+        body.insertParagraph(idx+7, FRONTMATTER_MARKER).setBold(false).setBackgroundColor(null);
+        body.insertParagraph(idx+8, '');
+        var placeholder = body.insertParagraph(idx+9, ANNOTATION_PLACEHOLDER);
+        body.insertParagraph(idx+10, '');
+        body.insertParagraph(idx+11, END_POST_MARKER).setBold(false).setForegroundColor('#FF0000');
 
         // POSITION CURSOR ON PLACEHOLDER COPY TEXT
         var rangeBuilder = doc.newRange();
