@@ -2,7 +2,7 @@ var NEW_POST_MARKER = "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 var END_POST_MARKER = "---------------------------------------------------------------------------------------------------------";
 var FRONTMATTER_MARKER = "---";
 var ANNOTATION_PLACEHOLDER = "[Annotation content goes here]";
-var PREVIEW_API_ENDPOINT = "https://nfyw9sf89l.execute-api.us-east-1.amazonaws.com/v1/preview";
+var PREVIEW_API_ENDPOINT = "https://nfyw9sf89l.execute-api.us-east-1.amazonaws.com/Prod/preview";
 
 function setLogo_() {
     // Get DocumentProperties
