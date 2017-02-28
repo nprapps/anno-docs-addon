@@ -14,6 +14,8 @@ function onOpen(e) {
     menu.addSeparator();
     menu.addItem('Set Authors Spreadsheet', 'showAuthorsDialog_');
     menu.addItem('Set Sidebar Logo', 'setLogo_');
+    menu.addSeparator();
+    menu.addItem('Publish Non-Live Preview', 'preview_');
     menu.addToUi();
 }
 
