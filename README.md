@@ -1,5 +1,5 @@
-AnnotateAddon
-========================
+anno-docs-addon
+===============
 
 * [What is this?](#what-is-this)
 * [Assumptions](#assumptions)
@@ -66,7 +66,7 @@ What's in here?
 
 The project contains the following folders and important files:
 
-* ``annotate`` -- Google Apps Script Add-On source files
+* ``code`` -- Google Apps Script Add-On source files
 * ``fabfile`` -- [Fabric](http://docs.fabfile.org/en/latest/) commands for automating setup, deployment, data processing, etc.
 * ``templates`` -- HTML ([Jinja2](http://jinja.pocoo.org/docs/)) templates, to be compiled locally.
 * ``app.py`` -- A [Flask](http://flask.pocoo.org/) app for rendering the project locally.
@@ -78,8 +78,8 @@ Bootstrap the project
 ---------------------
 
 ```
-cd annotateAddon
-mkvirtualenv annotateAddon
+cd anno-docs-addon
+mkvirtualenv anno-docs-addon
 pip install -r requirements.txt
 ```
 
@@ -98,7 +98,7 @@ Run the project
 A flask app is used to run the project locally. It will automatically recompile templates and assets on demand.
 
 ```
-workon annotateAddon
+workon anno-docs-addon
 fab app
 ```
 

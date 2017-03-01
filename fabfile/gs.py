@@ -285,7 +285,7 @@ def download(name=None, dest='google_apps_scripts'):
 
 
 @task
-def upsert(name=None, src='annotate'):
+def upsert(name=None, src='code'):
     """
     Upload project files to drive,
     pass the id of the project and a source path
@@ -370,7 +370,7 @@ def upsert(name=None, src='annotate'):
 
 
 @task
-def create(name=None, folderid=None, folder=None, src='annotate'):
+def create(name=None, folderid=None, folder=None, src='code'):
     """
     Create a new google apps script project
     """
