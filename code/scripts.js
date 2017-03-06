@@ -3,6 +3,7 @@ var END_POST_MARKER = "---------------------------------------------------------
 var FRONTMATTER_MARKER = "---";
 var ANNOTATION_PLACEHOLDER = "[Annotation content goes here]";
 var PREVIEW_API_ENDPOINT = "https://nfyw9sf89l.execute-api.us-east-1.amazonaws.com/Prod/preview";
+var LIVE_TRANSCRIPT_END_MSG = '-------> LIVE TRANSCRIPT HAS ENDED <-----------';
 
 function setLogo_() {
     // Get DocumentProperties
@@ -60,6 +61,15 @@ function preview_() {
     var responseCode = response.getResponseCode();
     var data = JSON.parse(response.getContentText("UTF-8"));
     showPreviewDialog_(responseCode, data.message);
+}
+
+function marker_() {
+    // Add maarker at the end of the document
+    var body = DocumentApp.getActiveDocument().getBody();
+    var hr = body.appendHorizontalRule();
+    var marker = hr.getParent();
+    marker.appendText(LIVE_TRANSCRIPT_END_MSG);
+    body.appendParagraph('END');
 }
 
 

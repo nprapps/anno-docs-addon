@@ -15,6 +15,7 @@ function onOpen(e) {
     menu.addItem('Set Authors Spreadsheet', 'showAuthorsDialog_');
     menu.addItem('Set Sidebar Logo', 'setLogo_');
     menu.addSeparator();
+    menu.addItem('Non-Live: Add Document End Marker', 'marker_');
     menu.addItem('Non-Live: Publish Preview', 'preview_');
     menu.addToUi();
 }
