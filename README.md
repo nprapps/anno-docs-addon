@@ -15,7 +15,7 @@ What is this?
 
 Google Docs Add-on to add annotations.
 
-If you just want to use it there's a publicly available [Google Doc Template](https://docs.google.com/document/d/1PYWrdnrcUJwe8dlondyN_x8SjSyLqdsxUktHSHAuvv0/edit?usp=sharing) that you can make a copy of and it will include all the necesary code to run the Add-on.
+If you just want to use it there's a publicly available [Google Doc Template](https://docs.google.com/document/d/1sVjw3mFHvF9tY1Qs2DrKSwClOd9Xv9b8mFSNFGZpX4M/edit?usp=sharing) that you can make a copy of and it will include all the necesary code to run the Add-on.
 
 ![Copy](screenshots/copy.png)
 
