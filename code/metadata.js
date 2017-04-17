@@ -100,6 +100,18 @@ function insertMetadata(formObject) {
             author += ' ' + formObject.author;
         }
 
+        // Tags metadata
+        var tags = 'Tags:';
+        if (formObject.tags) {
+            tags += ' ' + formObject.tags;
+        }
+
+        // Status metadata
+        var status = 'Status:';
+        if (formObject.status) {
+            status += ' ' + formObject.status;
+        }
+
         // Slug metadata
         var slug = 'Slug: ';
         var slug_lower = (formObject.description).toLowerCase();
@@ -162,12 +174,14 @@ function insertMetadata(formObject) {
         p = body.insertParagraph(idx+3, FRONTMATTER_MARKER);
         body.insertParagraph(idx+4, author);
         body.insertParagraph(idx+5, slug);
-        body.insertParagraph(idx+6, published).setHeading(DocumentApp.ParagraphHeading.HEADING3).setBold(true).setBackgroundColor('#FFF2CC');
-        body.insertParagraph(idx+7, FRONTMATTER_MARKER).setBold(false).setBackgroundColor(null);
-        body.insertParagraph(idx+8, '');
-        var placeholder = body.insertParagraph(idx+9, ANNOTATION_PLACEHOLDER);
+        body.insertParagraph(idx+6, status);
+        body.insertParagraph(idx+7, tags);
+        body.insertParagraph(idx+8, published).setHeading(DocumentApp.ParagraphHeading.HEADING3).setBold(true).setBackgroundColor('#FFF2CC');
+        body.insertParagraph(idx+9, FRONTMATTER_MARKER).setBold(false).setBackgroundColor(null);
         body.insertParagraph(idx+10, '');
-        body.insertParagraph(idx+11, END_POST_MARKER).setBold(false).setForegroundColor('#FF0000');
+        var placeholder = body.insertParagraph(idx+11, ANNOTATION_PLACEHOLDER);
+        body.insertParagraph(idx+12, '');
+        body.insertParagraph(idx+13, END_POST_MARKER).setBold(false).setForegroundColor('#FF0000');
 
         // POSITION CURSOR ON PLACEHOLDER COPY TEXT
         var rangeBuilder = doc.newRange();

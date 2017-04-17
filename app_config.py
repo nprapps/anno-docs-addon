@@ -39,7 +39,7 @@ LOG_LEVEL = logging.INFO
 """
 GOOGLE APPS SCRIPTS
 """
-GAS_PROJECT_NAME = 'Annotate' # Google app scripts addon project name
+GAS_PROJECT_NAME = 'AnnotateTags' # Google app scripts addon project name
 DRIVE_PARENT_FOLDER_ID = '0B6C-jdxmvrJoM3JnZ1ZZUkhVQTg' # Parent id in drive
 
 GOOGLE_OAUTH_CREDENTIALS_PATH = '~/.google_oauth_credentials'

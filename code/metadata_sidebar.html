@@ -16,6 +16,22 @@
         </div>
 
         <div class="block form-group">
+          <h3 for="tags">Tags</h3>
+          <select multiple name="tags">
+            <option value="immigration">Immigration</option>
+            <option value="government">Government Reduction</option>
+            <option value="jobs">Jobs Creation</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="block form-group">
+          <h3 for="status">Status</h3>
+          <input class="width-100" placeholder="Status of the claim"
+                 type="text" name="status" id="status">
+        </div>
+
+        <div class="block form-group">
           <h3>Author<span class="required-flag">*</span></h3>
           <? var half = Math.floor(data.length/2);?>
           <div class="col-one">
